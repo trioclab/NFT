@@ -1,11 +1,23 @@
 import FeaturedItems from "../components/FeaturedItems";
 import DiscoverItems from "../components/DiscoverItems";
 import TopSellers from "../components/TopSellers";
+import NFTList from "../components/NFTList";  // Import the NFTList component
 import Link from "next/link";
+import { useEffect, useState } from "react";  // Import useEffect and useState
+import axios from "axios";  // Import Axios for API calls
+
 export default function Explore() {
+  const [nfts, setNfts] = useState([]);  // State to store fetched NFTs
+
+  useEffect(() => {
+    // Fetch NFT data from the backend
+    axios.get('http://localhost:5000/api/nfts')
+      .then(response => setNfts(response.data))  // Store fetched NFTs in state
+      .catch(error => console.error(error));  // Handle any errors
+  }, []);
+
   return (
     <div>
-      <div>
       <div className="page-heading py-16 bg-gray-900 text-white flex flex-col justify-center items-center" style={{ height: 'calc(90vh - 5rem)' }}>
         <div className="container mx-auto px-4">
           <div className="text-center">
@@ -36,10 +48,13 @@ export default function Explore() {
           </div>
         </div>
       </div>
-        <FeaturedItems />
-        <DiscoverItems />
-        <TopSellers />
-      </div>
+
+      {/* Pass the fetched NFT data to the NFTList component */}
+      <NFTList nfts={nfts} />
+
+      <FeaturedItems />
+      <DiscoverItems />
+      <TopSellers />
     </div>
   );
 }
