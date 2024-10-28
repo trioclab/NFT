@@ -1,4 +1,5 @@
 // components/MainBanner.jsx
+import React ,{ useState , useEffect , useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Hero from '../img/hero.png'; 

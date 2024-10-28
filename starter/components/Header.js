@@ -31,11 +31,11 @@ export default function Header() {
                   <a className="text-white hover:text-blue-200">Item Details</a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/author">
                   <a className="text-white hover:text-blue-200">Author</a>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/create">
                   <a className="text-white hover:text-blue-200">Create Yours</a>

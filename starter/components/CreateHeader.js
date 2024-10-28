@@ -4,7 +4,7 @@ import Link from "next/link";
 function CreateHeader() {
   return (
     <div>
-      <div className="page-heading py-16 bg-gradient-to-r from-blue-800 via-purple-800 to-purple-600 text-white flex flex-col justify-center items-center" style={{ height: 'calc(90vh - 5rem)' }}>
+      <div className="page-heading py-16 bg-gray-900 text-zinc-200 flex flex-col justify-center items-center" style={{ height: 'calc(90vh - 5rem)' }}>
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h6 className="text-3xl font-semibold mb-2">Liberty NFT Market</h6>
